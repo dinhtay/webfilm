@@ -1,0 +1,36 @@
+.header__admin {
+  background: bg("black");
+  min-height: 60px;
+  @include MediaQuery($sm) {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header__admin--mobile {
+    display: none;
+    @include MediaQuery($sm) {
+      display: block;
+    }
+    .open__menumobile {
+      padding-right: spacing(1.5);
+      i {
+        @include text(text("blue1"), fs("h1"), fw("fwRegular"));
+
+        line-height: 60px;
+      }
+    }
+  }
+  .header__admin--brand {
+    width: 20%;
+    text-decoration: none;
+    p {
+      margin: 0;
+      text-transform: uppercase;
+      margin-left: 1%;
+      @include text(text("blue1"), fs("h3"), fw("fwRegular"));
+      line-height: 60px;
+      span {
+        color: text("white");
+      }
+    }
+  }
+}

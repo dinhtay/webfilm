@@ -1,0 +1,35 @@
+@function bg($color) {
+  @if (map-has-key($map: $bgcolor, $key: $color)) {
+    @return map-get($map: $bgcolor, $key: $color);
+  }
+}
+
+@function text($color) {
+  @if (map-has-key($map: $textColor, $key: $color)) {
+    @return map-get($map: $textColor, $key: $color);
+  }
+}
+
+@function fs($fsize) {
+  @if (map-has-key($map: $fs, $key: $fsize)) {
+    @return map-get($map: $fs, $key: $fsize);
+  }
+}
+
+@function fw($fweight) {
+  @if (map-has-key($map: $fw, $key: $fweight)) {
+    @return map-get($map: $fw, $key: $fweight);
+  }
+}
+
+@function spacing($x, $y: null) {
+  @if ($y==null) {
+    @return $x * $spacing;
+  }
+  @return $x * $spacing $y * $spacing;
+}
+@function hov($hver) {
+  @if (map-has-key($map: $hover, $key: $hver)) {
+    @return map-get($map: $hover, $key: $hver);
+  }
+}

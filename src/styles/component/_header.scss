@@ -1,0 +1,79 @@
+/*-----------HEADER------------*/
+.header {
+  display: flex;
+  opacity: 0.85;
+  justify-content: space-between;
+  align-items: center;
+  background-color: bg("primary");
+  height: 60px;
+  width: 100%;
+  padding: spacing(0, 1);
+  box-shadow: 0 0 5px #f1f1f1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  &__brand {
+    display: flex;
+    cursor: pointer;
+    text-decoration: none !important;
+    img {
+      @include size(100px, 50px);
+      margin-left: spacing(0.5);
+    }
+    p {
+      @include text(text("primary"), fs("h5"), fw("fwMedium"));
+      padding-top: spacing(0.5);
+      span {
+        @include text(text("secondary"), fs("h3"), fw("fwBold"));
+      }
+    }
+  }
+  &__nav {
+    .menu--navbar {
+      display: flex;
+      margin: 0;
+      li {
+        list-style: none;
+        margin: spacing(0, 2);
+        a {
+          cursor: pointer;
+          text-decoration: none;
+          @include text(text("primary"), fs("h5"), fw("fwMedium"));
+          transition: all 0.3s;
+          &:hover {
+            color: text("secondary");
+          }
+        }
+      }
+    }
+  }
+  &__login {
+    display: flex;
+
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      margin: spacing(0, 0.5);
+      i {
+        @include text(text("gray"), fs("h2"), fw("fwBold"));
+        margin-right: spacing(0.7);
+      }
+      span {
+        display: inline-block;
+        @include text(text("gray"), fs("subtext1"), fw("fwMedium"));
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  @include MediaQuery($sm) {
+    display: none;
+  }
+}
+
+/*-----------END HEADER------------*/

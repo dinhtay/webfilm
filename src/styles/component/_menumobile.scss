@@ -1,0 +1,28 @@
+.menu__mobile {
+  @include size(450px, 100%);
+  @include MediaQuery($xs) {
+    @include size(250px, 100%);
+  }
+  .menu__mobile--branch {
+    img {
+      width: 40%;
+      margin-left: 30%;
+    }
+  }
+  .menu__mobile--item {
+    margin-top: spacing(1);
+    ul {
+      padding: spacing(0, 0.5);
+      li {
+        text-align: center;
+        list-style: none;
+        margin: spacing(2, 0);
+        a {
+          text-decoration: none;
+          cursor: pointer;
+          @include text(text("secondary"), fs("h4"), fw("fwMedium"));
+        }
+      }
+    }
+  }
+}

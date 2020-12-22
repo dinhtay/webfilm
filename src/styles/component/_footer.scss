@@ -1,0 +1,111 @@
+.footer {
+  background: bg("black");
+  @include text(text("white"), fs("h4"), fw("fwMedium"));
+  text-align: center;
+  @include MediaQuery($xs) {
+    display: flex;
+  }
+  &__contact {
+    padding: spacing(2, 0);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    &__client {
+      width: 20%;
+      p {
+        @include text(text("white"), fs("h5"), fw("fwMedium"));
+      }
+
+      .footer__client--list {
+        display: flex;
+        .footer__client--item {
+          width: 25%;
+          img {
+            width: 60%;
+          }
+        }
+      }
+      @include MediaQuery($xs) {
+        width: 15%;
+        p {
+          @include text(text("white"), fs("h5"), fw("fwMedium"));
+          margin: spacing(0.4, 0);
+        }
+        .footer__client--list {
+          display: block;
+          .footer__client--item {
+            width: 100%;
+            margin-bottom: 10px;
+            img {
+              width: 60%;
+            }
+          }
+        }
+      }
+    }
+    &__info {
+      width: 50%;
+      p {
+        @include text(text("white"), fs("h5"), fw("fwMedium"));
+      }
+
+      .footer__contact__address {
+        span {
+          @include text(text("gray"), fs("h5"), fw("fwMedium"));
+          margin: spacing(0.4, 0);
+        }
+      }
+      .footer__contact__link {
+        p {
+          @include text(text("gray"), fs("h5"), fw("fwMedium"));
+          margin: spacing(0.4, 0);
+        }
+      }
+      @include MediaQuery($xs) {
+        width: 70%;
+        p {
+          @include text(text("white"), fs("h5"), fw("fwMedium"));
+          margin: spacing(0.4, 0);
+        }
+
+        span {
+          @include text(text("gray"), fs("subtext2"), fw("fwMedium"));
+          margin: spacing(0.4, 0);
+        }
+      }
+    }
+    &__app {
+      width: 10%;
+      img {
+        width: 20%;
+        margin: spacing(0, 0.4);
+      }
+
+      @include MediaQuery($xs) {
+        width: 15%;
+        p {
+          @include text(text("white"), fs("h5"), fw("fwMedium"));
+          margin: spacing(0.4, 0);
+        }
+        .footer__social {
+          img {
+            margin-bottom: 10px;
+            width: 60%;
+          }
+        }
+      }
+    }
+
+    &__social {
+      width: 10%;
+      img {
+        width: 20%;
+        margin: spacing(0, 0.4);
+      }
+      @include MediaQuery($xs) {
+        display: none;
+      }
+    }
+  }
+}
+/* end footer */

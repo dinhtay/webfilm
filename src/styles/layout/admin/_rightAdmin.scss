@@ -1,0 +1,306 @@
+//GOBAL
+.dashboard {
+  @include MediaQuery($sm) {
+    width: 95%;
+    margin: auto;
+  }
+  width: 80%;
+  background: bg("white4");
+  .chart {
+    padding-top: 5%;
+    width: 60%;
+    margin: auto;
+    @include MediaQuery($sm) {
+      width: 90%;
+    }
+    h3 {
+      text-align: center;
+      @include text(text("blue"), fs("h3"), fw("fwLight"));
+    }
+  }
+  h1 {
+    @include text(text("blue"), fs("h1"), fw("fwLight"));
+    margin: spacing(2);
+    @include MediaQuery($sm) {
+      font-size: fs("h2");
+    }
+  }
+  .dashboard__manage {
+    width: 90%;
+    margin-left: 5%;
+    background: bg("primary");
+    .dashboard__manage--list {
+      display: flex;
+      height: 100%;
+
+      .dashboard__manage--item {
+        width: 33.33%;
+        text-decoration: none;
+
+        .dashboard__item--content {
+          padding: spacing(3);
+          text-align: center;
+          i {
+            @include text(text("blue"), fs("h1"), fw("fwLight"));
+          }
+          p {
+            @include text(text("primary"), fs("h2"), fw("fwLight"));
+            @include MediaQuery($sm) {
+            }
+          }
+          span {
+            @include text(text("gray1"), fs("h4"), fw("fwLight"));
+          }
+        }
+      }
+      .lineR {
+        border-right: 3px solid bg("white4");
+      }
+    }
+  }
+  .manager__pagination {
+    // position: fixed;
+    // bottom: 2%;
+    // right: 5%;
+    margin: spacing(4);
+    float: right;
+  }
+}
+
+//User
+.manageruser {
+  .manageruser__action {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    @include MediaQuery($sm) {
+      .manageruser__action--item {
+        width: 30%;
+      }
+      .manageruser__action--item:first-child {
+        width: 70%;
+      }
+    }
+    .manageruser__action--item {
+      width: 45%;
+    }
+  }
+  .manageruser__table {
+    margin-top: 1%;
+  }
+}
+
+//Film
+.managerfilm {
+  .managerfilm__action {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    @include MediaQuery($sm) {
+      .managerfilm__action--item {
+        width: 30%;
+      }
+      .managerfilm__action--item:first-child {
+        width: 70%;
+      }
+    }
+    .managerfilm__action--item {
+      width: 45%;
+    }
+  }
+  .managerfilm__table {
+    margin-top: 1%;
+  }
+}
+
+//Cinema
+.managercinema {
+  .managercinema__table {
+    margin: 1%;
+    width: 98%;
+    .cinemaInfo {
+      width: 80%;
+      margin-left: 10%;
+      margin-bottom: 1%;
+    }
+  }
+}
+.manageCinema__discrible {
+  position: relative;
+  cursor: pointer;
+  .manageCinema__discrible__full {
+    box-shadow: 0 0 10px #444;
+    width: 200%;
+    z-index: 10;
+    padding: spacing(1);
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    display: none;
+    background-color: bg("primary");
+    p {
+      @include text(text("primary"), fs("subtext1"), fw("fwLight"));
+    }
+  }
+  &:hover .manageCinema__discrible__full {
+    display: inline-block;
+  }
+}
+
+.manageCinema__img {
+  position: relative;
+  cursor: pointer;
+  .manageCinema__img__full {
+    box-shadow: 0 0 10px #444;
+    width: 120%;
+    z-index: 10;
+    padding: spacing(1);
+    position: absolute;
+    left: 40%;
+    top: 0%;
+    display: none;
+    background-color: bg("primary");
+    img {
+      width: 100%;
+    }
+  }
+  &:hover .manageCinema__img__full {
+    display: inline-block;
+  }
+}
+
+.managershowtime {
+  position: relative;
+  .managershowtime__tab {
+    display: flex;
+    @include MediaQuery($sm) {
+      display: block;
+    }
+    &__chair {
+      width: 60%;
+      @include MediaQuery($sm) {
+        width: 100%;
+      }
+      .list__chair {
+        width: 96%;
+        margin: 2%;
+        .namescreen {
+          img {
+            width: 95%;
+          }
+        }
+        .list__chair--row {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          // -----Ghế------
+          span {
+            @include text(text("primary"), fs("h5"), fw("fwRegular"));
+            border-radius: 3px;
+            padding: 0;
+            width: 5%;
+            margin: 6px 0.625%;
+            text-align: center;
+            @include MediaQuery($lg) {
+              font-size: fs("subtext1");
+            }
+            @include MediaQuery($md) {
+              font-size: 9px;
+            }
+          }
+          // -----Ghế------
+        }
+      }
+
+      .list__chair-typeseat {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: spacing(3);
+        span {
+          font-size: fs("h4");
+          padding: spacing(1);
+          @include MediaQuery($xs) {
+            padding: spacing(0.4);
+            font-size: 12px;
+          }
+          &::before {
+            content: "\f0c8";
+            font: 14px/1 FontAwesome;
+            font-size: fs("h2");
+          }
+        }
+      }
+
+      .colornormal {
+        color: text("green");
+        span {
+          &::before {
+            color: text("green");
+          }
+        }
+      }
+      .colorvip {
+        color: text("yellow");
+        span {
+          &::before {
+            color: text("yellow");
+          }
+        }
+      }
+      .colordeluxe {
+        color: text("blue");
+        span {
+          &::before {
+            color: text("blue");
+          }
+        }
+      }
+      .colorchosen {
+        color: text("secondary");
+        span {
+          &::before {
+            color: text("secondary");
+          }
+        }
+      }
+      .colornotchosen {
+        color: text("gray");
+        span {
+          &::before {
+            color: text("gray");
+          }
+        }
+      }
+    }
+    &__table {
+      @include MediaQuery($sm) {
+        width: 100%;
+      }
+      h3 {
+        text-align: center;
+        @include text(text("primary"), fs("h2"), fw("fwRegular"));
+        @include MediaQuery($sm) {
+          font-size: fs("h3");
+          margin-top: spacing(1.2);
+        }
+      }
+      p {
+        @include text(text("primary"), fs("h4"), fw("fwRegular"));
+        @include MediaQuery($sm) {
+          font-size: fs("h5");
+        }
+      }
+    }
+  }
+}
+
+.loadingAdmin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  &__icon {
+    font-size: fs("h2");
+  }
+}

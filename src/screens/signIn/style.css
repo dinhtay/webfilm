@@ -1,0 +1,6 @@
+.text__error {
+  color: red;
+  font-style: italic;
+  font-size: 15px;
+  margin: 0;
+}

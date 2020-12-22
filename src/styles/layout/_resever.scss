@@ -1,0 +1,741 @@
+.book__section {
+  @include MediaQuery($sm) {
+    margin-top: 60px;
+  }
+
+  background: bg("primary");
+  .book__row {
+    margin-top: spacing(6);
+    overflow: scroll;
+  }
+  .col-md-8 {
+    padding: spacing(0);
+  }
+  .section--right {
+    background: bg("primary");
+    z-index: 5;
+    box-shadow: 0 0 15px rgba(bg("black"), 0.3);
+    .input__discount--text {
+      padding: 0 10px 0 0px;
+    }
+  }
+
+  .comboGroup-list {
+    @include MediaQuery($sm) {
+      margin-top: spacing(-4);
+      min-height: 600px !important;
+    }
+  }
+  &--right {
+    position: relative;
+    z-index: 99;
+    .book__right--amount {
+      border-bottom: 1px dashed bg("gray1");
+      @include size(80%, 100px);
+      padding: spacing(2, 0);
+      margin-left: 10%;
+      padding-top: spacing(0.8);
+      text-align: center;
+      span {
+        @include text(text("secondary"), fs("h0"), fw("fwMedium"));
+        line-height: 100px;
+        @include MediaQuery($sm) {
+          font-size: fs("h1");
+        }
+      }
+    }
+    .book__right--name {
+      border-bottom: 1px dashed bg("gray1");
+      width: 80%;
+      min-height: 100px;
+      padding: spacing(1, 0);
+      margin-left: 10%;
+      text-align: left;
+      p {
+        @include text(text("primary"), fs("h4"), fw("fwRegular"));
+        margin: 0;
+        @include MediaQuery($sm) {
+          font-size: fs("h5");
+        }
+      }
+      p:first-child {
+        @include text(text("primary"), fs("h3"), fw("fwMedium"));
+        margin: spacing(0.5, 0);
+        @include MediaQuery($sm) {
+          font-size: fs("h4");
+        }
+      }
+      .book__name--age {
+        @include text(text("white"), fs("h4"), fw("fwMedium"));
+        background-color: bg("orange1");
+        border-radius: 4px;
+        padding: spacing(0, 0.4);
+        min-width: 30px;
+        text-align: center;
+        display: inline-block;
+        margin-right: spacing(0.8);
+      }
+    }
+
+    .book__right--chair {
+      border-bottom: 1px dashed bg("gray1");
+      width: 80%;
+      min-height: 100px;
+      padding: spacing(1, 0);
+      margin-left: 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .book__chair--number {
+        span {
+          @include text(text("secondary"), fs("h4"), fw("fwMedium"));
+        }
+      }
+      .book__chair--price {
+        span {
+          @include text(text("secondary"), fs("h4"), fw("fwMedium"));
+        }
+      }
+    }
+    .book__right--combo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px dashed bg("gray1");
+      line-height: 55px;
+      @include size(80%, 100px);
+      padding: spacing(1, 0);
+      margin-left: 10%;
+      .book__combo--title {
+        p {
+          cursor: pointer;
+          img {
+            width: 25px;
+          }
+          span {
+            @include text(text("secondary"), fs("h4"), fw("fwMedium"));
+          }
+        }
+        &:hover {
+          .comboGroup {
+            right: 33.3333%;
+            display: block;
+          }
+        }
+      }
+      .book__combo--price {
+        span {
+          @include text(text("secondary"), fs("h4"), fw("fwMedium"));
+        }
+      }
+    }
+    .book__right--input {
+      border-bottom: 1px dashed bg("gray1");
+      @include size(80%, 90px);
+      margin-left: 10%;
+      .input--madoka {
+        margin: spacing(0.5);
+      }
+    }
+    .input--discount {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      .input__discount--btn {
+        .btn--discount {
+          @include button(bg("orange1"), text("white"), fs("h5"), 3px);
+          border: none;
+          padding: spacing(0.5, 1);
+        }
+      }
+    }
+    .book__right--checkout {
+      .book__right--typeCheckout {
+        width: 80%;
+        margin-left: 10%;
+        border-bottom: 1px dashed bg("gray1");
+        p {
+          @include text(text("secondary"), fs("h4"), fw("fwMedium"));
+        }
+        .input-checkout {
+          input[type="radio"] {
+            margin-right: spacing(2);
+            background-color: bg("primary");
+            @include size(20px, 20px);
+            border: 1px solid bg("blue1");
+            border-radius: 50%;
+            outline: 0;
+          }
+          img {
+            @include size(200px, 35px);
+          }
+        }
+      }
+
+      .book__right--note {
+        padding-top: spacing(2);
+        text-align: center;
+        i {
+          @include text(text("secondary"), fs("h3"), fw("fwMedium"));
+        }
+        span {
+          @include text(text("primary"), fs("h5"), fw("fwRegular"));
+        }
+      }
+      .book__right--btn {
+        .btn--book {
+          margin-top: spacing(1);
+          margin-bottom: spacing(1);
+          outline: none;
+          border: none;
+          @include size(100%, 60px);
+          @include button(bg("gray3"), text("white"), fs("h3"), 3px);
+          padding: spacing(1, 2.5);
+          &:hover {
+            filter: brightness(20%);
+            -webkit-filter: brightness(80%);
+          }
+        }
+      }
+    }
+  }
+
+  &--left {
+    .book__left-header {
+      z-index: 10;
+      box-shadow: 0 2px 15px rgba(bg("black"), 0.3);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .book__left--body {
+      .book__body--title {
+        padding: spacing(0.5, 2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left--title {
+          display: flex;
+          .title--logocinema {
+            width: 15%;
+            img {
+              width: 70%;
+            }
+            @include MediaQuery($sm) {
+              width: 20%;
+              img {
+                width: 95%;
+              }
+            }
+            @include MediaQuery($xs) {
+              width: 30%;
+              img {
+                width: 95%;
+              }
+            }
+          }
+          .title-content {
+            margin-right: 10px;
+            p {
+              @include text(text("gray"), fs("h5"), fw("fwMedium"));
+              margin: 0;
+              @include MediaQuery($sm) {
+                font-size: 70%;
+              }
+            }
+            p:first-child {
+              margin-top: spacing(2);
+              @include text(text("primary"), fs("h4"), fw("fwBold"));
+              @include MediaQuery($sm) {
+                font-size: 70%;
+              }
+              span {
+                @include text(text("gray"), fs("h5"), fw("fwMedium"));
+                @include MediaQuery($sm) {
+                  font-size: 80%;
+                }
+              }
+            }
+          }
+        }
+        .right--title {
+          p {
+            margin: 0;
+            @include text(text("gray"), fs("subtext2"), fw("fwMedium"));
+            @include MediaQuery($sm) {
+              font-size: 80%;
+            }
+            span {
+              @include text(text("secondary"), fs("h2"), fw("fwMedium"));
+              @include MediaQuery($xs) {
+                font-size: fs("h3");
+              }
+            }
+          }
+        }
+      }
+      .book__body--seatmap {
+        margin-top: spacing(2);
+        .book__seatmap--resever {
+          .book__resever--screen {
+            .namescreen {
+              width: 100%;
+              text-align: center;
+              img {
+                width: 90%;
+              }
+              @include MediaQuery($sm) {
+                img {
+                  width: 100%;
+                  margin: 0 auto;
+                }
+              }
+            }
+          }
+          .day {
+            display: none;
+            padding-left: 2%;
+            width: 5%;
+            Button {
+              clip-path: polygon(
+                0% 20%,
+                60% 20%,
+                60% 0%,
+                100% 50%,
+                60% 100%,
+                60% 80%,
+                0% 80%
+              );
+              background: bg("orange2");
+              margin: 2px 0;
+              font-weight: bold;
+            }
+            @include MediaQuery($lg) {
+              Button {
+                background: bg("orange2");
+                margin: 1.5px 0;
+                font-weight: bold;
+              }
+            }
+            @include MediaQuery($sm) {
+              Button {
+                background: bg("orange2");
+                margin: 0;
+                font-weight: bold;
+                height: 33px;
+              }
+            }
+            @include MediaQuery($xs) {
+              display: none;
+            }
+          }
+          .right {
+            @include MediaQuery($xs) {
+              display: none;
+            }
+          }
+          .book__resever--listseat {
+            padding: 0 5%;
+            width: 90%;
+            @include MediaQuery($xs) {
+              width: 100%;
+              margin: 0 auto;
+              padding: 0;
+            }
+            text-align: center;
+
+            margin: 0 auto;
+            .book__listseat--rowseat {
+              .book__listseat--chair {
+                display: flex;
+                // justify-content: center;
+                // align-items: center;
+                width: 100%;
+                flex-wrap: wrap;
+                // -----Ghế------
+                button {
+                  @include text(text("primary"), fs("h5"), fw("fwRegular"));
+
+                  border: none;
+                  outline: none;
+                  border-radius: 3px;
+
+                  padding: 0;
+                  width: 5%;
+                  margin: 6px 0.625%;
+                  @include MediaQuery($lg) {
+                    font-size: fs("subtext1");
+                  }
+
+                  @include MediaQuery($md) {
+                    font-size: 9px;
+                  }
+                }
+                // -----Ghế------
+
+                // @include MediaQuery($lg) {
+                //   margin: 4.5px;
+                //   padding: 7px 1px;
+                //   font-size: 8px;
+                //   width: 15px;
+                // }
+                // @include MediaQuery($sm) {
+                //   margin: 1.5px;
+                //   padding: 7px 1px;
+                //   font-size: 8px;
+                //   width: 15px;
+                // }
+                // @include MediaQuery($xs) {
+                //   margin: 1.8px;
+                //   padding: 7px 1px;
+                //   font-size: 8px;
+                //   width: 16px;
+                //   width: 5%;
+                // }
+                // @include MediaQuery($xss) {
+                //   margin: 1.8px;
+                //   padding: 7px 1px;
+                //   font-size: 6px;
+                //   width: 16px;
+                //   width: 4.6%;
+                // }
+              }
+
+              .row--seat {
+                margin-right: spacing(5);
+                @include text(text("primary"), fs("h4"), fw("fwBold"));
+                @include MediaQuery($sm) {
+                  margin-right: spacing(2);
+                }
+              }
+
+              .number-seat {
+                // font-family: icomoon!important;
+                line-height: 1;
+                cursor: pointer;
+                padding-left: 23px;
+                outline: none;
+              }
+              .number-seat-vip {
+                // font-family: icomoon!important;
+                outline: none;
+                line-height: 1;
+                cursor: pointer;
+                padding-left: 23px;
+                /*  &::before {
+                  // content: "\e909";
+                  // font-family: FontAwesome;
+                  content: "\f0c8";
+                  color: #f7b500;
+                  font: 14px/1 FontAwesome;
+
+                  font-size: fs("h1");
+                  @include MediaQuery($sm) {
+                    font-size: fs("h4");
+                  }
+                }
+                &:focus {
+                  &::before {
+                    color: text("secondary");
+                  }
+                } */
+              }
+            }
+          }
+        }
+
+        .book__seatmap-typeseat {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: spacing(3);
+          span {
+            font-size: fs("h4");
+            padding: spacing(1);
+            @include MediaQuery($xs) {
+              padding: spacing(0.4);
+              font-size: 12px;
+            }
+            @include MediaQuery($xss) {
+              padding: spacing(0.4);
+              font-size: 8px;
+            }
+            &::before {
+              content: "\f0c8";
+              font: 14px/1 FontAwesome;
+              font-size: fs("h2");
+            }
+          }
+        }
+
+        .colornormal {
+          color: text("green");
+          span {
+            &::before {
+              color: text("green");
+            }
+          }
+        }
+        .colorvip {
+          color: text("yellow");
+          span {
+            &::before {
+              color: text("yellow");
+            }
+          }
+        }
+        .colordeluxe {
+          color: text("blue");
+          span {
+            &::before {
+              color: text("blue");
+            }
+          }
+        }
+        .colorchosen {
+          color: text("secondary");
+          span {
+            &::before {
+              color: text("secondary");
+            }
+          }
+        }
+        .colornotchosen {
+          color: text("gray");
+          span {
+            &::before {
+              color: text("gray");
+            }
+          }
+        }
+      }
+    }
+
+    .book__infoUser {
+      width: 100%;
+      &__logo {
+        display: flex;
+        width: 100%;
+
+        .admin {
+          width: 30%;
+
+          &__avata {
+            width: 100%;
+            padding: spacing(2, 0);
+            text-align: center;
+            background: bg("white1");
+            img {
+              width: 40%;
+              @include MediaQuery($sm) {
+                width: 60%;
+              }
+            }
+            p {
+              margin-top: 10px;
+            }
+          }
+          &__sidebar {
+            width: 100%;
+            margin-top: -14px;
+            width: 100%;
+            background: bg("white1");
+            transition: all 0.4s ease;
+            p {
+              font-size: fs("h3");
+              color: text("secondary");
+              text-align: center;
+              margin-bottom: 0;
+              padding-bottom: spacing(2);
+              user-select: none;
+              transition: all 0.4s ease;
+            }
+
+            a {
+              text-decoration: none;
+              display: block;
+              height: 100%;
+              width: 100%;
+              font-size: fs("h4");
+              color: text("secondary");
+              padding: spacing(1.5, 0);
+              box-sizing: border-box;
+              border-top: 1px solid bg("orange1");
+              border-bottom: 1px solid bg("orange1");
+              transition: 0.4s;
+              &:hover {
+                padding-left: 10%;
+              }
+              i {
+                margin-right: 2%;
+              }
+              @include MediaQuery($sm) {
+                font-size: fs("h5");
+              }
+            }
+
+            @include MediaQuery($sm) {
+              ul {
+                a {
+                  font-size: 5px;
+                }
+              }
+            }
+          }
+        }
+        .info {
+          width: 70%;
+          padding: spacing(2, 1.5);
+          // max-height: 500px;
+          // overflow-y: scroll;
+          h3 {
+            font-size: fs("h2");
+            text-align: center;
+            margin: 20px 0;
+            @include MediaQuery($sm) {
+              ont-size: fs("h3");
+            }
+          }
+          .MuiOutlinedInput-root {
+            margin: 20px 5px;
+            margin-left: 25px;
+            max-width: 212px;
+          }
+          label {
+            margin: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.comboList {
+  width: 650px;
+  height: 100%;
+  @include MediaQuery($sm) {
+    width: 100%;
+    min-height: 500px;
+  }
+  &__comboItem {
+    padding: spacing(2);
+    margin: auto;
+    @include size(80%, 100%);
+    @include MediaQuery($sm) {
+      @include size(90%, 100%);
+    }
+    box-shadow: 0px 0px 20px bg("gray1");
+    .comboItem__comboType {
+      .comboItem__comboType--title {
+        margin-bottom: spacing(1);
+        padding: spacing(1);
+        background-color: bg("white2");
+        border-bottom: 1px dashed bg("gray3");
+        @include text(text("primary"), fs("h2"), fw("fwMedium"));
+        @include MediaQuery($sm) {
+          font-size: fs("h3");
+        }
+        text-transform: uppercase;
+      }
+      .comboType__item {
+        border-bottom: 1px dashed bg("gray3");
+        padding-bottom: spacing(0.5);
+        display: flex;
+        .comboType__item-img {
+          width: 20%;
+          img {
+            width: 70%;
+          }
+        }
+        .comboType__item--iteminfo {
+          margin-top: 4%;
+          width: 50%;
+          .combo__item--name {
+            p {
+              @include text(text("primary"), fs("h4"), fw("fwBold"));
+              margin: 0;
+              @include MediaQuery($sm) {
+                font-size: fs("h4");
+              }
+            }
+          }
+          .combo__item--price {
+            span {
+              @include text(text("secondary"), fs("h5"), fw("fwMedium"));
+            }
+          }
+        }
+        .comboType__item--btn {
+          margin-top: 4%;
+          width: 30%;
+          button {
+            @include button(bg("primary"), text("secondary"), fs("h4"), 5px);
+            border: 1px solid text("secondary");
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            &:hover {
+              color: text("primary");
+              border: 1px solid text("primary");
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn__cart {
+  outline: none;
+  border: none;
+  color: #fb4226;
+  i {
+    font-size: fs("h3");
+  }
+}
+
+.comboType__item--quantity {
+  width: 100%;
+  .btn__combo {
+    @include button(bg("primary"), text("gray1"), fs("h4"), 0);
+    padding: 0;
+    outline: none;
+    cursor: initial;
+    border: transparent;
+    transform: scaleX(3);
+    cursor: pointer;
+    -webkit-transform: scaleX(3);
+    -moz-transform: scaleX(3);
+    -ms-transform: scaleX(3);
+    -o-transform: scaleX(3);
+  }
+  .btn-decline {
+    margin-right: 5px;
+  }
+  .btn-add {
+    margin-left: 5px;
+    color: text("secondary");
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+  }
+  .combo__number {
+    @include text(text("primary"), fs("h4"), fw("fwMedium"));
+    @include size(30px, 30px);
+    border: 1px solid bg("gray2");
+    border-radius: 4px;
+    text-align: center;
+    display: inline-block;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+  }
+}

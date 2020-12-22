@@ -1,0 +1,125 @@
+.adv__section {
+  padding: 100px 0 -1px 0;
+  background: url(../images/backapp.jpg);
+  background-size: contain;
+  height: 600px;
+  @include MediaQuery($sm) {
+    padding: spacing(2);
+    height: 550px;
+  }
+  @include MediaQuery($xs) {
+    padding: spacing(2);
+    height: 430px;
+  }
+  @include MediaQuery($xss) {
+    padding: spacing(2);
+    height: 450px;
+  }
+  .adv__section--mobile {
+    margin-top: 3%;
+    margin-left: 10%;
+    @include MediaQuery($sm) {
+      margin-left: 40%;
+    }
+  }
+  &--content {
+    display: flex;
+    @include MediaQuery($sm) {
+      display: block;
+    }
+
+    .adv__mobile--bg {
+      .slick-track {
+        width: 120px !important;
+        height: 235px !important;
+      }
+      // thêm
+      .adv__mobile--slick {
+        overflow: hidden;
+      }
+      // and
+    }
+
+    .adv__content--details {
+      align-items: center;
+      margin-top: 5%;
+      margin-left: 15%;
+      width: 40%;
+      @include MediaQuery($sm) {
+        margin-top: 0;
+        width: 70%;
+        text-align: center;
+      }
+      h3 {
+        @include text(text("white"), fs("h1"), fw("fwBold"));
+        letter-spacing: 1px;
+        width: 80%;
+        margin-bottom: spacing(3);
+        @include MediaQuery($sm) {
+          text-align: center;
+          width: 100%;
+          font-size: fs("h2");
+        }
+      }
+      p {
+        @include text(text("white"), fs("h4"), fw("fwRegular"));
+        width: 80%;
+        margin-bottom: spacing(1.5);
+        @include MediaQuery($sm) {
+          text-align: center;
+          width: 100%;
+          font-size: fs("h5");
+        }
+      }
+      .btn_adv {
+        @include button(bg("orange1"), text("white"), fs("h4"), 5px);
+        border: none;
+        font-weight: fw("fwBold");
+        padding: spacing(1, 2);
+        &:hover {
+          background: bg("orange2");
+        }
+      }
+    }
+  }
+  &--mobile {
+    @include size(45%, 100%);
+    position: relative;
+    @include MediaQuery($sm) {
+      margin-left: 40%;
+      width: 40%;
+      margin-top: spacing(1);
+    }
+    .adv__mobile--bg {
+      img {
+        overflow: hidden;
+        @include size(32%, 42%);
+        @include MediaQuery($sm) {
+          width: 50%;
+        }
+      }
+      .adv__mobile--slick {
+        border: none;
+        position: absolute;
+        top: 2%;
+        left: 1%;
+        @include size(30%, 100%);
+        @include MediaQuery($sm) {
+          @include size(47%, 100%);
+        }
+        img {
+          border: none;
+          outline: none;
+          @include size(99%, 85%);
+          margin-left: 0%;
+          margin-top: 1%;
+          border-radius: 8%;
+          -webkit-border-radius: 8%;
+          -moz-border-radius: 8%;
+          -ms-border-radius: 8%;
+          -o-border-radius: 8%;
+        }
+      }
+    }
+  }
+}

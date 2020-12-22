@@ -1,0 +1,44 @@
+.news__sections {
+  background-color: bg("white3");
+  &__container {
+    width: 60%;
+    margin: auto;
+    background-color: bg("primary");
+    padding-top: spacing(8);
+    @include MediaQuery($sm) {
+      width: 80%;
+    }
+    .news__sections__content {
+      padding: spacing(0, 3);
+      .news__content--title {
+        @include text(text("primary"), fs("h2"), fw("fwBold"));
+        @include MediaQuery($sm) {
+          font-size: fs("h2");
+        }
+      }
+      .news__content--day {
+        @include text(text("gray1"), fs("h5"), fw("fwRegular"));
+      }
+      .news__content--brief {
+        @include text(text("primary"), fs("h4"), fw("fwMedium"));
+        @include MediaQuery($sm) {
+          font-size: fs("h4");
+        }
+      }
+      .news__content--img {
+        img {
+          width: 100%;
+        }
+      }
+      .news__content--describe {
+        @include text(text("black1"), fs("h4"), fw("fwRegular"));
+        word-spacing: 2px;
+        line-height: 1.6;
+        text-align: justify;
+        @include MediaQuery($sm) {
+          font-size: fs("h4");
+        }
+      }
+    }
+  }
+}

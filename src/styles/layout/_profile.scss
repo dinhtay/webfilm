@@ -1,0 +1,95 @@
+.profile {
+  .modal {
+    @include MediaQuery($sm) {
+      margin-top: 60px;
+      .modal-footer {
+        margin: 0 auto;
+      }
+    }
+  }
+  width: 100%;
+  margin-top: 60px;
+  h3 {
+    text-align: center;
+    margin-bottom: 0px;
+    padding: 10px 0;
+  }
+  &__content {
+    .editProfile {
+      display: none;
+    }
+    background: bg("white2");
+    width: 60%;
+    margin: 0 auto;
+    @include MediaQuery($sm) {
+      width: 90%;
+    }
+    &__left {
+      padding: 2% 0;
+      text-align: center;
+      .profile__content--name {
+        margin: 0px;
+        @include text(text("primary"), fs("h3"), fw("fwMedium"));
+      }
+      .avatar {
+        img {
+          width: 20%;
+          border-radius: 10%;
+          -webkit-border-radius: 10%;
+          -moz-border-radius: 10%;
+          -ms-border-radius: 10%;
+          -o-border-radius: 10%;
+        }
+      }
+      // .btnAddAvatar {
+      //   @include button(bg("black"), text("white"), fs("h5"), 5px);
+      //   outline: none;
+      //   border: none;
+      //   padding: spacing(0.5);
+      //   opacity: 1;
+      //   transition: all 0.3s;
+      //   -webkit-transition: all 0.3s;
+      //   -moz-transition: all 0.3s;
+      //   -ms-transition: all 0.3s;
+      //   -o-transition: all 0.3s;
+      //   &:hover {
+      //     opacity: 0.8;
+      //   }
+      // }
+    }
+    &__right {
+      padding: 0 20px 40px 20px;
+      .MuiOutlinedInput-root {
+        margin: 20px 5px;
+        margin-left: 36px;
+        max-width: 212px;
+      }
+      label {
+        margin: 20px;
+      }
+      @include MediaQuery($sm) {
+        .MuiOutlinedInput-root {
+          margin: 20px 5px;
+          margin-left: 55px;
+          max-width: 212px;
+        }
+        label {
+          margin-left: 40px;
+        }
+      }
+    }
+    @include MediaQuery($sm) {
+      &__right {
+        padding: 0 0px 40px 0px;
+      }
+    }
+
+    @include MediaQuery($sm) {
+      .editProfile {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  }
+}

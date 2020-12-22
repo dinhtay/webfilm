@@ -1,0 +1,135 @@
+/* scss mycarousel */
+.mycarousel {
+  position: relative;
+  background: linear-gradient(to top, bg("linear-gradient"), transparent 100%);
+  &__brand {
+    position: relative;
+    height: 650px;
+    background-size: cover;
+    background-position: top center;
+    filter: brightness(50%) blur(10px);
+
+    -webkit-filter: brightness(50%) blur(10px);
+    @include MediaQuery($sm) {
+      height: 600px;
+    }
+    @include MediaQuery($xs) {
+      height: 450px;
+    }
+  }
+  &__mobile {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    display: none;
+    @include MediaQuery($sm) {
+      display: block;
+      z-index: 5;
+      p {
+        margin: 0;
+        text-align: center;
+        @include text(text("light"), fs("h5"), fw("fwMedium"));
+      }
+      p:nth-child(2) {
+        font-size: fs("h3");
+      }
+      img {
+        width: 40%;
+        margin-left: 30%;
+        @include MediaQuery($xs) {
+          width: 50%;
+          margin-left: 25%;
+        }
+      }
+    }
+  }
+  &__content {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__image {
+      width: 22%;
+      img {
+        width: 100%;
+        height: 400px;
+        border-radius: 5px;
+        //width: 290px;
+        //height: 400px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+      }
+    }
+    &__title {
+      margin-left: spacing(3);
+      width: 40%;
+      padding-left: spacing(2);
+      p {
+        @include text(text("light"), fs("h4"), fw("fwMedium"));
+        margin: 0;
+      }
+      label {
+        padding: 0 5px;
+        margin-right: 5px;
+        border-radius: 5px;
+        background: bg("orange1");
+        @include text(text("white"), fs("h3"), fw("fwMedium"));
+      }
+      .mycarousel__content--name {
+        @include text(text("white"), 28px, fw("fwMedium"));
+        margin: 0;
+      }
+    }
+    &__evaluate {
+      width: 20%;
+      text-align: center;
+      margin-left: spacing(10);
+      p:first-child {
+        margin: 0;
+        @include text(text("white"), fs("number"), fw("fwRegular"));
+        border: 8px solid text("secondary");
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        line-height: 80px;
+        display: inline-block;
+        border-radius: 50%;
+      }
+      .mycarousel__evaluate--rating {
+        i {
+          margin: spacing(0, 0.2);
+          @include text(text("secondary"), fs("h3"), fw("fwRegular"));
+        }
+      }
+      .number {
+        width: 25px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 830px) and (max-width: 1150px) {
+  .mycarousel__content {
+    top: 8%;
+    left: 10%;
+  }
+  .mycarousel__content__evaluate {
+    margin-left: 60px;
+  }
+}
+@media screen and (max-width: 829px) {
+  .mycarousel__content {
+    opacity: 0;
+  }
+  .mycarousel__brand {
+    opacity: 1;
+  }
+  .mycarousel__content__title {
+    top: 60%;
+    opacity: 1;
+  }
+}

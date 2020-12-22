@@ -1,0 +1,302 @@
+.line {
+  // height: 120px;
+  // background: linear-gradient(180deg,bg("primary"),bg("white1"),bg("gray1"),bg("gray2"));
+  padding-top: 120px;
+  background: url(../images/back-news.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  @include MediaQuery($sm) {
+    padding-top: 60px;
+  }
+}
+.cinema__section {
+  margin: spacing(0, 5);
+  @include MediaQuery($sm) {
+    margin: spacing(0, 1);
+  }
+  height: 450px;
+  display: flex;
+  border: 1px solid bg("gray1");
+  .scroll {
+    float: left;
+    height: 450px;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+  }
+  .scroll {
+    width: 10%;
+    @include MediaQuery($sm) {
+      width: 20%;
+    }
+  }
+
+  .scroll2 {
+    width: 30%;
+    @include MediaQuery($sm) {
+      width: 35%;
+    }
+  }
+
+  .scroll3 {
+    width: 60%;
+    @include MediaQuery($sm) {
+      width: 45%;
+    }
+  }
+
+  &--branch {
+    min-height: 450px;
+    border-right: 1px solid bg("gray1");
+    width: 100%;
+    .cinema__section--logo {
+      button {
+        outline: none;
+        background: transparent;
+        border: none;
+        width: 100%;
+        img {
+          cursor: pointer;
+          width: 60%;
+          margin-left: 20%;
+          padding: 10px 0;
+          border-bottom: 1px solid bg("gray1");
+          transition: all 0.3s;
+          @include MediaQuery($sm) {
+            width: 50%;
+            margin-left: 25%;
+          }
+          @include MediaQuery($xs) {
+            width: 90%;
+            margin-left: 5%;
+          }
+        }
+      }
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  &--rap {
+    min-height: 450px;
+    border-right: 1px solid bg("gray1");
+    width: 100%;
+    .cinema__rap--detail {
+      display: flex;
+      align-items: center;
+      margin: spacing(1, 0);
+      border-bottom: 1px solid bg("gray1");
+      width: 80%;
+      margin-left: 10%;
+      opacity: 1;
+      &:hover {
+        img {
+          opacity: 0.7;
+        }
+      }
+      @include MediaQuery($sm) {
+        display: block;
+      }
+      cursor: pointer;
+      .cinema__rap--img {
+        width: 40%;
+        img {
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          -o-border-radius: 5px;
+          transition: all 0.3s;
+          width: 70%;
+          -webkit-transition: all 0.3s;
+          -moz-transition: all 0.3s;
+          -ms-transition: all 0.3s;
+          -o-transition: all 0.3s;
+        }
+        @include MediaQuery($sm) {
+          width: 50%;
+        }
+        @include MediaQuery($xs) {
+          width: 80%;
+
+          img {
+            @include size(90%, 80px);
+            @include MediaQuery($sm) {
+              @include size(100%, 40px);
+            }
+          }
+        }
+      }
+      .cimena__rap--titile {
+        width: 70%;
+        @include MediaQuery($sm) {
+          width: 100%;
+        }
+      }
+      .cimena__rap--titile {
+        p:first-child {
+          @include text(text("primary"), fs("subtext1"), fw("fwRegular"));
+          margin: 0;
+          span {
+            @include text(text("secondary"), fs("subtext1"), fw("fwBold"));
+            @include MediaQuery($xs) {
+              font-size: fs("subtext1")-1;
+              margin: 0;
+            }
+          }
+        }
+        p:nth-child(2) {
+          @include text(text("gray1"), fs("subtext1"), fw("fwRegular"));
+          margin: 0;
+          @include MediaQuery($sm) {
+            font-size: fs("subtext1")-3;
+          }
+        }
+        a {
+          @include text(text("secondary"), fs("subtext1"), fw("fwBold"));
+        }
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .cinema__galaxy,
+    .cinema__lotte,
+    .cinema__bhd {
+      display: none;
+    }
+    .active {
+      opacity: 1;
+    }
+  }
+
+  &--film {
+    min-height: 450px;
+    width: 100%;
+    .cinema__film--detail {
+      display: flex;
+      width: 90%;
+      margin-left: 5%;
+      border-bottom: 1px solid bg("gray1");
+      padding: spacing(2);
+      @include MediaQuery($sm) {
+        display: block;
+        width: 98%;
+        margin-left: 1%;
+      }
+      .cinema__film--img {
+        width: 15%;
+        img {
+          width: 90%;
+        }
+        @include MediaQuery($sm) {
+          width: 100%;
+          img {
+            width: 30%;
+            margin-left: 40%;
+          }
+        }
+        @include MediaQuery($xs) {
+          img {
+            width: 70%;
+            margin-left: 15%;
+          }
+        }
+      }
+      .cinema__film--book {
+        width: 80%;
+        @include MediaQuery($sm) {
+          width: 100%;
+        }
+        .film--title {
+          .film--age {
+            @include text(text("white"), fs("h5"), fw("fwMedium"));
+            background-color: bg("orange1");
+            border-radius: 4px;
+            padding: spacing(0, 0.5);
+            min-width: 33px;
+            text-align: center;
+            display: inline-block;
+            margin-right: spacing(0.8);
+            @include MediaQuery($xs) {
+              font-size: 85%;
+              text-align: center;
+              display: inline-block;
+            }
+            @include MediaQuery($sm) {
+              font-size: 85%;
+              text-align: center;
+              display: inline-block;
+            }
+            @include MediaQuery($xs) {
+              font-size: 60%;
+              text-align: center;
+              display: inline-block;
+            }
+          }
+          .film--name {
+            @include text(text("primary"), fs("h5"), fw("fwBold"));
+            @include MediaQuery($sm) {
+              font-size: 80%;
+              display: block;
+              width: 100%;
+            }
+          }
+          .film--time {
+            @include text(text("gray"), fs("subtext1"), fw("fwMedium"));
+            margin: 0;
+            @include MediaQuery($xs) {
+              font-size: fs("subtext1")-3;
+            }
+          }
+          .film-type {
+            @include text(text("primary"), fs("h5"), fw("fwBold"));
+            @include MediaQuery($sm) {
+              font-size: 80%;
+              margin: 0;
+            }
+          }
+        }
+        .film--reserve {
+          display: flex;
+          flex-wrap: wrap;
+          @include MediaQuery($sm) {
+            // display: block;
+          }
+          .linkBook {
+            cursor: pointer;
+            @include text(text("gray"), fs("h5"), fw("fwMedium"));
+            margin: spacing(0.5);
+            padding: spacing(1);
+            transition: all 0.2s;
+            text-decoration: none;
+            text-align: center;
+            background-color: rgba(bg("gray1"), 0.5);
+            border-radius: 7px;
+            color: text("primary");
+            border: 1px solid text("gray");
+            -webkit-border-radius: 7px;
+            -moz-border-radius: 7px;
+            -ms-border-radius: 7px;
+            -o-border-radius: 7px;
+            &:hover {
+              color: text("secondary");
+            }
+            @include MediaQuery($sm) {
+              font-size: fs("subtext2")-2;
+              padding: 5px 2px;
+              width: 46%;
+              margin: 1.5% 2%;
+            }
+          }
+        }
+      }
+    }
+    .film__galaxy,
+    .film__lotte,
+    .film__bhd {
+      display: none;
+    }
+  }
+}

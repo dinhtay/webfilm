@@ -1,0 +1,380 @@
+/* scss introduce */
+@include MediaQuery($sm) {
+  .mycarousel__content {
+    display: none !important;
+  }
+}
+/* scss introduce */
+
+.introduce {
+  background-color: bg("linear-gradient");
+  .container {
+    width: 70%;
+    @include MediaQuery($sm) {
+      width: 100%;
+      padding: 0px;
+    }
+  }
+  &__title1 {
+    margin-top: spacing(-3);
+
+    &__link {
+      ul {
+        display: flex;
+        justify-content: center;
+        li {
+          list-style: none;
+          a {
+            padding: 10px;
+            @include text(text("white"), fs("h4"), fw("fwMedium"));
+            text-decoration: none;
+          }
+          &:hover {
+            transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -o-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+          }
+        }
+        li {
+          &.active {
+            a {
+              color: text("secondary");
+            }
+          }
+        }
+      }
+    }
+    &__content {
+      @include text(text("white"), fs("h5"), fw("fwMedium"));
+      /* showtime */
+      .row {
+        height: 550px;
+        width: 100%;
+      }
+      .scroll {
+        overflow-y: scroll;
+        height: 550px;
+      }
+      .showtimes {
+        height: 550px;
+        background: bg("primary");
+        border-radius: 5px;
+        display: flex;
+        width: 100%;
+        &__left {
+          width: 15%;
+          overflow-y: scroll;
+          .active1 {
+            opacity: 1;
+          }
+          @include MediaQuery($sm) {
+            padding-top: 25px;
+            width: 25%;
+          }
+
+          &__logo {
+            background: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            opacity: 1;
+            &:hover {
+              opacity: 0.8;
+            }
+            display: flex;
+            width: 100%;
+            &--imges {
+              width: 70%;
+              margin-left: 15%;
+              @include MediaQuery($xs) {
+                width: 90%;
+                margin-left: 5%;
+                margin-bottom: 10px;
+                margin-left: 0;
+              }
+              img {
+                width: 80%;
+                padding: 10%;
+                @include MediaQuery($sm) {
+                  padding: 0px;
+                }
+              }
+            }
+          }
+        }
+        &__right {
+          width: 85%;
+          min-height: 700px;
+          @include MediaQuery($sm) {
+            width: 75%;
+          }
+          .scroll1 {
+            border-bottom: 2px solid bg("orange1");
+          }
+          &__date {
+            margin: 15px 0;
+            display: -webkit-inline-box;
+            &--scroll1 {
+              text-align: center;
+              button {
+                cursor: pointer;
+                margin: spacing(0.5, 1);
+                outline: none;
+                border: none;
+                height: 40px;
+                font-weight: fw("fwMedium");
+                @include button(bg("primary"), text("secondary"), fs("h4"), 3px);
+                @include MediaQuery($sm) {
+                  font-size: fs("h5");
+                }
+                p {
+                  margin: 0;
+                }
+                p:first-child {
+                  font-size: fs("h5");
+                  @include MediaQuery($sm) {
+                    font-size: fs("subtext1");
+                  }
+                }
+                &:focus {
+                  color: text("primary");
+                }
+                &:active {
+                  color: text("primary");
+                }
+              }
+            }
+          }
+          &__content {
+            height: 468px;
+            overflow-y: scroll;
+            .scroll3 {
+              height: 1000px;
+            }
+            .index {
+              border-bottom: 1px solid bg("gray3");
+              margin-top: 20px;
+            }
+
+            h4 {
+              @include text(text("primary"), fs("h4"), fw("fwMedium"));
+            }
+
+            padding: 0 15px 15px 15px;
+            &--address {
+              display: flex;
+              &--imges {
+                width: 10%;
+                img {
+                  width: 90%;
+                }
+                @include MediaQuery($sm) {
+                  width: 20%;
+                  img {
+                    width: 100%;
+                  }
+                }
+              }
+              &--title {
+                width: 80%;
+                margin-left: 15px;
+                span:first-child {
+                  @include text(text("green"), fs("h4"), fw("fwMedium"));
+                  @include MediaQuery($sm) {
+                    font-size: fs("h5");
+                  }
+                }
+                span:nth-last-of-type(1) {
+                  @include text(text("primary"), fs("h4"), fw("fwMedium"));
+                  @include MediaQuery($sm) {
+                    font-size: fs("h5");
+                  }
+                }
+                p {
+                  @include text(text("gray1"), fs("h5"), fw("fwMedium"));
+                  @include MediaQuery($sm) {
+                    font-size: fs("subtext1");
+                  }
+                  a {
+                    text-decoration: none;
+                    color: text("secondary");
+                  }
+                }
+              }
+            }
+            &--time {
+              padding-bottom: 20px;
+              .btn-outline-light {
+                border: 1px solid bg("gray3");
+                padding: spacing(1);
+                margin: spacing(0.2);
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+                cursor: pointer;
+                opacity: 1;
+                transition: all 0.3;
+                -webkit-transition: all 0.3;
+                -moz-transition: all 0.3;
+                -ms-transition: all 0.3;
+                -o-transition: all 0.3;
+                @include MediaQuery($sm) {
+                  padding: spacing(0.5);
+                }
+                &:hover {
+                  opacity: 0.7;
+                }
+              }
+              .time1 {
+                span:first-child {
+                  @include text(text("green"), fs("h4"), fw("fwMedium"));
+                  &:hover {
+                    color: text("secondary");
+                  }
+                }
+                span:nth-last-of-type(1) {
+                  @include text(text("gray1"), fs("subtext1"), fw("fwMedium"));
+                }
+              }
+              .time2 {
+                span:first-child {
+                  @include text(text("green"), fs("h4"), fw("fwMedium"));
+                  &:hover {
+                    color: text("secondary");
+                  }
+                }
+                span:nth-last-of-type(1) {
+                  @include text(text("gray1"), fs("subtext1"), fw("fwMedium"));
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__content1 {
+      padding: spacing(0, 4);
+
+      @include MediaQuery($sm) {
+        padding: 0px;
+      }
+      p {
+        @include text(text("primary"), fs("h5"), fw("fwMedium"));
+      }
+      .introduce__content1--table {
+        table {
+          width: 75%;
+
+          @include MediaQuery($sm) {
+            width: 100%;
+          }
+          .table__content {
+            td {
+              @include text(text("secondary"), fs("h4"), fw("fwMedium"));
+              @include MediaQuery($sm) {
+                font-size: 15px;
+              }
+            }
+          }
+          tr {
+            margin: spacing(1, 0);
+            td {
+              @include text(text("primary"), fs("h4"), fw("fwMedium"));
+              @include MediaQuery($sm) {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+      .introduce__content1--detail {
+        p:first-child {
+          @include text(text("secondary"), fs("h4"), fw("fwMedium"));
+          margin-bottom: 0;
+          @include MediaQuery($sm) {
+            font-size: 15px;
+          }
+        }
+      }
+      .introduce__content1--trailer {
+        p:first-child {
+          @include text(text("secondary"), fs("h4"), fw("fwMedium"));
+          margin-bottom: 0;
+          @include MediaQuery($sm) {
+            font-size: 12px;
+          }
+        }
+        iframe {
+          width: 600px;
+          height: 320px;
+          @include MediaQuery($xs) {
+            width: 328px;
+            height: 200px;
+          }
+          @include MediaQuery($xss) {
+            width: 270px;
+            height: 200px;
+          }
+        }
+      }
+    }
+    /* showtime */
+
+    &__content2 {
+      .avaluate {
+        margin: 0 auto;
+        padding-bottom: 50px;
+
+        .btn-dark {
+          color: #fff;
+          background-color: #343a40;
+          border-color: #343a40;
+          /* margin-bottom: 85px; */
+          margin-top: -94px;
+          margin-left: 18px;
+        }
+        .media-comment {
+          background: bg("white1");
+          border: 1px solid bg("gray3");
+          padding: spacing(0.5, 2);
+          display: flex;
+          margin-bottom: 10px;
+          .media-avatar {
+            img {
+              width: 50px;
+              border-radius: 50%;
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+              -ms-border-radius: 50%;
+              -o-border-radius: 50%;
+            }
+          }
+
+          .media-body {
+            .media-date {
+              @include text(text("primary"), fs("h5"), fw("fwLight"));
+              margin: 0;
+            }
+            .media-rating {
+              color: #ffbd20 !important;
+              font-size: 12px;
+            }
+            margin-left: spacing(1.5);
+            .media-body-name {
+              @include text(text("primary"), fs("h4"), fw("fwMedium"));
+              margin: 0;
+            }
+            p {
+              background: textColor("white");
+              @include text(text("gray1"), fs("h5"), fw("fwRegular"));
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
