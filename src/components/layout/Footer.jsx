@@ -32,17 +32,17 @@ class Footer extends PureComponent {
             <div className="footer__contact__info">
               <div className="row footer__contact mx-0">
                 <div className="text-center  col-12">
-                  <p>CyberFilm – SẢN PHẨM CỦA ĐỖ PHÚ TÀI</p>
+                  <p>CyberFilm – SẢN PHẨM CỦA TRẦN ĐÌNH TÂY</p>
                   <div className="footer__contact__address">
                     <span>
-                      Địa chỉ:số 201, đường Cần Vương, Thành phố Quy Nhơn, tỉnh
-                      Bình Định
+                      Địa chỉ:số 484, đường Chi Lăng, Phường Phú Hậu ,Thừa Thiên
+                      Huế
                     </span>
                   </div>
                   <div className="footer__contact__link">
                     <p>Số Điện Thoại (Hotline): 037 924 3337</p>
                     <p style={{ color: "red" }}>
-                      Email: dophutai.2298@gmail.com
+                      Email: trandinhtay161193@gmail.com
                     </p>
                   </div>
                 </div>
